@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://hijabhackathon-frontend-6lnduk6q2-amnas-projects-65af5582.vercel.app', // your frontend domain
+  origin: 'https://hijabhackathon-frontend-4yf1f4xl4-amnas-projects-65af5582.vercel.app', // your frontend domain
   credentials: true
 }));
 app.get('/', (req, res) => {
