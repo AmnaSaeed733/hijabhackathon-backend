@@ -11,6 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Backend is working!' });
+});
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected successfully'))
   .catch(err => console.error('MongoDB connection error:', err));
@@ -19,7 +23,7 @@ app.use('/api/reviews', ratingRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/ratings', ratingRoutes);   
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
