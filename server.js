@@ -9,8 +9,10 @@ const ratingRoutes = require('./routes/rating');
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: '*' }));
-
+app.use(cors({
+  origin: 'https://hijabhackathon-frontend-6lnduk6q2-amnas-projects-65af5582.vercel.app', // your frontend domain
+  credentials: true
+}));
 app.get('/', (req, res) => {
   res.json({ message: 'Backend is working!' });
 });
